@@ -39,7 +39,7 @@ public interface AmqpConfigurer {
 		return alternateExchange(alterExchange.getName());
 	}
 
-	Queue queue(String name, Function<Queue, Queue> modifier);
+	Queue queue(String name, Function<Queue, Queue>... modifiers);
 
 	default Queue queue(String name) {
 		return queue(name, null);
@@ -58,6 +58,8 @@ public interface AmqpConfigurer {
 	default UnaryOperator<Queue> setDeadLetterExchange(Exchange exchange) {
 		return setDeadLetterExchange(exchange.getName());
 	}
+
+	UnaryOperator<Queue> setTimeToLive(int milliseconds);
 
 	SimpleMessageListenerContainer listenerContainer(Executor executor,
 			UnaryOperator<SimpleMessageListenerContainer> modifier, String... queueNames);

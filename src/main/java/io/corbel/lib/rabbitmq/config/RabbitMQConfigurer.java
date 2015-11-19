@@ -42,9 +42,12 @@ public class RabbitMQConfigurer implements AmqpConfigurer {
 	}
 
 	@Override
-	public Queue queue(String name, Function<Queue, Queue> modifier) {
+	public Queue queue(String name, Function<Queue, Queue>... modifiers) {
 		Queue queue = new Queue(name, true, false, false, new HashMap<>());
-		modify(queue, modifier);
+		if (modifiers != null) {
+			modify(queue, modifiers);
+		}
+
 		rabbitAdmin.declareQueue(queue);
 		return queue;
 	}
@@ -68,6 +71,14 @@ public class RabbitMQConfigurer implements AmqpConfigurer {
 	public UnaryOperator<Queue> setDeadLetterExchange(String exchangeName) {
 		return (Queue queue) -> {
 			queue.getArguments().put("x-dead-letter-exchange", exchangeName);
+			return queue;
+		};
+	}
+
+	@Override
+	public UnaryOperator<Queue> setTimeToLive(int milliseconds) {
+		return (Queue queue) -> {
+			queue.getArguments().put("x-message-ttl", milliseconds);
 			return queue;
 		};
 	}
@@ -111,8 +122,8 @@ public class RabbitMQConfigurer implements AmqpConfigurer {
 		}
 	}
 
-	private <T> void modify(T element, Function<T, T> modifier) {
-		if (modifier != null) {
+	private <T> void modify(T element, Function<T, T>... modifiers) {
+		for(Function<T, T> modifier : modifiers) {
 			modifier.apply(element);
 		}
 	}
