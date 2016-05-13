@@ -3,14 +3,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.corbel.lib</groupId>
+    <groupId>com.bq.corbel.lib</groupId>
     <artifactId>rabbitmq</artifactId>
     <version>0.9.0-SNAPSHOT</version>
 
     <name>lib-rabbitmq</name>
 
     <description>RabbitMQ Connection Library</description>
-    <url>https://github.com/corbel-platform/lib-rabbitmq</url>
+    <url>https://github.com/bq/lib-rabbitmq</url>
 
     <licenses>
         <license>
@@ -32,7 +32,7 @@
     <scm>
         <connection>scm:git:ssh://bq-devtools@git.dev.bqsoftware.net:29418/lib-rabbitmq</connection>
         <developerConnection>scm:git:ssh://bq-devtools@git.dev.bqsoftware.net:29418/lib-rabbitmq</developerConnection>
-        <url>https://github.com/corbel-platform/lib-rabbitmq</url>
+        <url>https://github.com/bq/lib-rabbitmq</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -154,11 +154,11 @@
 
     <ciManagement>
         <system>Travis CI</system>
-        <url>https://travis-ci.org/corbel-platform/lib-rabbitmq</url>
+        <url>https://travis-ci.org/bq/lib-rabbitmq</url>
     </ciManagement>
 
     <issueManagement>
-        <url>https://github.com/corbel-platform/lib-rabbitmq/issues</url>
+        <url>https://github.com/bq/lib-rabbitmq/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
