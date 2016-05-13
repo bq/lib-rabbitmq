@@ -1,10 +1,10 @@
-package io.corbel.lib.rabbitmq.ioc;
+package com.bq.corbel.lib.rabbitmq.ioc;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
-import io.corbel.lib.rabbitmq.config.AmqpConfiguration;
-import io.corbel.lib.rabbitmq.config.AmqpConfigurer;
+import com.bq.corbel.lib.rabbitmq.config.AmqpConfiguration;
+import com.bq.corbel.lib.rabbitmq.config.AmqpConfigurer;
 
 public class AmqpConfigurationBeanPostProcessor implements BeanPostProcessor {
 

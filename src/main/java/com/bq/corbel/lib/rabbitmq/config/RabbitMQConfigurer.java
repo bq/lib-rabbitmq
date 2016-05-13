@@ -1,4 +1,4 @@
-package io.corbel.lib.rabbitmq.config;
+package com.bq.corbel.lib.rabbitmq.config;
 
 import java.util.HashMap;
 import java.util.Map;
