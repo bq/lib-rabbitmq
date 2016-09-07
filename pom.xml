@@ -5,7 +5,7 @@
 
     <groupId>com.bq.corbel.lib</groupId>
     <artifactId>rabbitmq</artifactId>
-    <version>0.11.0</version>
+    <version>0.12.0-SNAPSHOT</version>
 
     <name>lib-rabbitmq</name>
 
@@ -33,7 +33,7 @@
         <connection>scm:git:ssh://bq-devtools@git.dev.bqsoftware.net:29418/lib-rabbitmq</connection>
         <developerConnection>scm:git:ssh://bq-devtools@git.dev.bqsoftware.net:29418/lib-rabbitmq</developerConnection>
         <url>https://github.com/bq/lib-rabbitmq</url>
-        <tag>rabbitmq-0.11.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
